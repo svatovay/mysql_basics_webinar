@@ -439,3 +439,11 @@ INSERT INTO `users_communities` VALUES
 ('97', '26')
 ;
 
+
+-- task_4_2
+
+SELECT DISTINCT firstname FROM users ORDER BY firstname
+
+-- task_4_3
+
+
