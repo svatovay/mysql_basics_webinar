@@ -452,4 +452,6 @@ AFTER birthday;
 
 UPDATE `profiles` SET `is_active`=FALSE WHERE FLOOR((TO_DAYS(NOW()) - TO_DAYS(birthday))/365.25) < 18
 
+-- task_4_4
 
+DELETE FROM `messages` WHERE `created_at` > NOW()
