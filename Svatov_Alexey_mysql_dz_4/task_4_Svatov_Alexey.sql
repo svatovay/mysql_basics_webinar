@@ -442,8 +442,14 @@ INSERT INTO `users_communities` VALUES
 
 -- task_4_2
 
-SELECT DISTINCT firstname FROM users ORDER BY firstname
+SELECT DISTINCT firstname FROM users ORDER BY firstname;
 
 -- task_4_3
+
+ALTER TABLE `profiles` 
+ADD COLUMN `is_active` BOOL DEFAULT TRUE 
+AFTER birthday;
+
+UPDATE `profiles` SET `is_active`=FALSE WHERE FLOOR((TO_DAYS(NOW()) - TO_DAYS(birthday))/365.25) < 18
 
 
