@@ -71,10 +71,6 @@ INSERT INTO `storehouses_products` VALUES
 
 SELECT `value` FROM `storehouses_products` ORDER BY `value`=0, `value`;
 
--- task_5_4
-
--- task_5_5
-
 -- task_aggregation_1 (в таблице users нет возраста, он есть в profiles)
 
 USE vk;
@@ -88,8 +84,5 @@ USE vk;
 SELECT COUNT(*) AS total, DAYNAME(DATE_FORMAT(`birthday`, '2021-%m-%d')) AS birthday_week
 FROM `profiles`
 GROUP BY birthday_week;
-
--- task_aggregation_3
-
 
 
