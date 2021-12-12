@@ -72,7 +72,11 @@ SELECT `value` FROM `storehouses_products` ORDER BY `value`=0, `value`;
 
 -- task_5_5
 
--- task_aggregation_1
+-- task_aggregation_1 (в таблице users нет возраста, он есть в profiles)
+
+USE vk;
+
+SELECT AVG(FLOOR((TO_DAYS(NOW()) - TO_DAYS(`birthday`))/365.25)) FROM `profiles`;
 
 -- task_aggregation_2
 
