@@ -1,6 +1,7 @@
-USE vk;
 
 -- task_5_1
+
+USE vk;
 
 ALTER TABLE `users` 
 ADD COLUMN `created_at` DATETIME DEFAULT NULL 
@@ -15,6 +16,8 @@ UPDATE `users` SET `created_at`=NOW() WHERE ISNULL(`created_at`)
 UPDATE `users` SET `updated_at`=NOW() WHERE ISNULL(`updated_at`)
 
 -- task_5_2 (есть решение на https://question-it.com/questions/677879/mysql-konvertirovat-dannye-varchar-v-datetime)
+
+USE vk;
 
 ALTER TABLE `users` 
 ADD COLUMN `created_at_v` VARCHAR(20) DEFAULT '20.10.2017 8:10'
@@ -79,6 +82,12 @@ USE vk;
 SELECT AVG(FLOOR((TO_DAYS(NOW()) - TO_DAYS(`birthday`))/365.25)) FROM `profiles`;
 
 -- task_aggregation_2
+
+USE vk;
+
+SELECT COUNT(*) AS total, DAYNAME(DATE_FORMAT(`birthday`, '2021-%m-%d')) AS birthday_week
+FROM `profiles`
+GROUP BY birthday_week;
 
 -- task_aggregation_3
 
