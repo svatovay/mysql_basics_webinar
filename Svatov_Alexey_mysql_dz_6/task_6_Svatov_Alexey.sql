@@ -39,6 +39,24 @@ SELECT COUNT(id) AS cnt_likes from likes WHERE user_id IN (SELECT user_id FROM p
 -- task_6_3
 USE vk;
 
+-- first variant
+SELECT
+(SELECT gender FROM profiles WHERE profiles.user_id = likes.user_id) AS gender,
+COUNT(id) AS cnt_likes
+FROM likes 
+GROUP BY gender;
+
+
+-- second variant
+SELECT user_id,
+(SELECT firstname FROM users WHERE id = user_id) AS fisrtname,
+(SELECT lastname FROM users WHERE id = user_id) AS lastname,
+(SELECT gender FROM profiles WHERE profiles.user_id = likes.user_id) AS gender,
+COUNT(id) AS cnt_likes
+FROM likes
+GROUP BY user_id
+ORDER BY gender;
+
 
 
 
