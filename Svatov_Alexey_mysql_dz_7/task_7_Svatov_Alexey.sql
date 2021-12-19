@@ -24,7 +24,8 @@ GROUP BY user_id
 
 -- task_7_2
 
-
+SELECT products.name AS pr_name, products.description, products.price, products.created_at, products.updated_at, catalogs.name AS ct_name
+FROM `products` LEFT JOIN `catalogs` ON products.catalog_id = catalogs.id 
 
 -- task_7_3
 
