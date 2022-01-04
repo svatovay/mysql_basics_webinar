@@ -17,7 +17,14 @@ ORDER BY cnt_of_messages DESC;
 -- task_8_2
 USE vk;
 
-
+SELECT
+ (SELECT CONCAT (u.firstname,' ', u.lastname) FROM users u WHERE id = l.user_id) AS fullname,
+ COUNT(id) AS cnt_likes
+  FROM likes l
+   JOIN profiles p ON
+        l.user_id = p.user_id 
+  WHERE TIMESTAMPDIFF(YEAR, p.birthday, NOW()) < 11
+GROUP BY id;
 
 -- task_8_3
 USE vk;
