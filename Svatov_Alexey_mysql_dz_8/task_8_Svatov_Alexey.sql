@@ -29,5 +29,11 @@ GROUP BY id;
 -- task_8_3
 USE vk;
 
+SELECT
+ p.gender,
+ COUNT(id) AS cnt_likes
+  FROM likes l
+   JOIN profiles p ON l.user_id = p.user_id
+GROUP BY p.gender;
 
 
