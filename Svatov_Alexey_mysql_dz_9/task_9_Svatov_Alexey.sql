@@ -7,10 +7,12 @@ INSERT INTO example.users SELECT * FROM shop.users WHERE id = 1;
 DELETE FROM shop.users WHERE id = 1;
 COMMIT;
 
-
 -- task_9_транзакции_2
 
-
+USE shop;
+CREATE OR REPLACE VIEW names_prod_cat AS
+SELECT name AS product_name, (SELECT name FROM catalogs WHERE id = catalog_id) AS catalog_name
+FROM products;
 
 -- task_9_транзакции_3
 
