@@ -24,7 +24,11 @@ FROM products;
 
 -- task_9_администрирование_1
 
-
+CREATE USER 'shop_read'@'localhost' IDENTIFIED WITH sha256_password BY 'Password1!';
+GRANT SELECT ON shop.* TO 'shop_read'@'localhost';
+CREATE USER 'shop'@'localhost' IDENTIFIED WITH sha256_password BY 'Password2?';
+GRANT ALL ON shop.* TO 'shop'@'localhost';
+SELECT User, Host FROM mysql.user;
 
 -- task_9_администрирование_2
 
