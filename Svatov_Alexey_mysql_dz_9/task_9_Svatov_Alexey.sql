@@ -35,6 +35,33 @@ SELECT User, Host FROM mysql.user;
 
 
 -- task_9_хранимые процедуры_1
+DROP FUNCTION IF EXISTS hello;
+DELIMITER //
+CREATE FUNCTION hello()
+RETURNS TEXT DETERMINISTIC
+BEGIN
+ DECLARE hour_now TINYINT;
+ DECLARE datetime_now TIMESTAMP;
+ DECLARE answer VARCHAR(255);
+ SET datetime_now = TIMESTAMP(NOW());
+ SET hour_now = EXTRACT(hour FROM datetime_now);
+ CASE 
+  WHEN hour_now > 6 AND hour_now < 12 
+   THEN SET answer = 'Доброе утро';
+  WHEN hour_now  >= 12 AND hour_now < 18 
+   THEN SET answer = 'Добрый день';
+  WHEN hour_now >= 18
+   THEN SET answer = 'Добрый вечер';
+  WHEN hour_now >= 0 AND hour_now < 6 
+   THEN SET answer = 'Доброй ночи';
+  ELSE SET answer = 'ERROR';
+ END CASE;
+ RETURN answer;
+END//
+DELIMITER ;
+
+SELECT hello();
+
 
 
 
