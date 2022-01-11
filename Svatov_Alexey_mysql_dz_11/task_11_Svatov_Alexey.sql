@@ -45,5 +45,29 @@ DELIMITER ;
 
 -- task_11_2
 
+DROP PROCEDURE IF EXISTS INSERT_USER_COUNT;
+DELIMITER //
+CREATE PROCEDURE INSERT_USER_COUNT (iter INT)
+BEGIN
+ DECLARE i INT DEFAULT iter;
+ DECLARE birthday DATETIME DEFAULT CURRENT_TIMESTAMP;
+ WHILE (i/10) > 0 DO
+   INSERT INTO shop.users (name, birthday_at) VALUES 
+   ('a', birthday), 
+   ('b', birthday),
+   ('c', birthday),
+   ('d', birthday),
+   ('e', birthday),
+   ('f', birthday),
+   ('g', birthday),
+   ('h', birthday),
+   ('i', birthday),
+   ('k', birthday)
+   ;
+   SET i = i - 1;
+ END WHILE;
+END//
+DELIMITER ;
 
+CALL INSERT_USER_COUNT(100);
 
