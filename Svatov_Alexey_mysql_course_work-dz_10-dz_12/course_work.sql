@@ -1,50 +1,7 @@
-/*
-USE vk;
-
-DROP TABLE IF EXISTS `notes`;
-CREATE TABLE `notes` (
-	`id` SERIAL PRIMARY KEY,
-	`heading` VARCHAR(100),
-	`body` TEXT,
-    `created_at` DATETIME DEFAULT NOW(),
-	`media_id` BIGINT unsigned NOT NULL,
-
-	INDEX index_of_heading(heading),
-    FOREIGN KEY (media_id) REFERENCES media(id)
-);
-
-DROP TABLE IF EXISTS `stickers`;
-CREATE TABLE `stickers` (
-	`id` SERIAL PRIMARY KEY,
-	`name` VARCHAR(50),
-	`author` BIGINT unsigned NOT NULL,
-    `rating` INT UNSIGNED DEFAULT 0,
-	`media_id` BIGINT unsigned NOT NULL,
-
-	INDEX index_of_name(name),
-	INDEX index_of_rating(rating),
-    FOREIGN KEY (media_id) REFERENCES media(id),
-    FOREIGN KEY (author) REFERENCES users(id)
-);
-
-DROP TABLE IF EXISTS `products`;
-CREATE TABLE `products` (
-	`id` SERIAL PRIMARY KEY,
-	`name` VARCHAR(50),
-	`price` DECIMAL(10,2),
-	`photos_id` BIGINT unsigned NOT NULL,
-
-	INDEX index_of_name(name),
-    FOREIGN KEY (photos_id) REFERENCES photos(id)
-);
-
-*/
-
-
 -- Создание базы и таблиц
-DROP TABLE IF EXISTS `pioner-online`;
+DROP DATABASE IF EXISTS `pioner-online`;
 CREATE DATABASE `pioner-online`;
-USE pioner-online;
+USE `pioner-online`;
 
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE users (
@@ -65,13 +22,12 @@ CREATE TABLE media_types (
 	name VARCHAR(20) NOT NULL,
 	specification TEXT,
 	
-	INDEX media_types_name_idx (name),
-	
+	INDEX media_types_name_idx (name)	
 ) COMMENT 'типы медиа';
 
 
 DROP TABLE IF EXISTS `media`;
-CREATE TABLE media;
+CREATE TABLE media (
 	id SERIAL PRIMARY KEY,
 	filename VARCHAR(100) NOT NULL,
 	media_type_id BIGINT UNSIGNED NOT NULL UNIQUE,
@@ -83,14 +39,14 @@ CREATE TABLE media;
 	
 	FOREIGN KEY (media_type_id) REFERENCES media_types(id) ON DELETE CASCADE ON UPDATE CASCADE,
 	FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE ON UPDATE CASCADE
-) COMENNT 'медиа';
+) COMMENT 'медиа';
 	
 
 DROP TABLE IF EXISTS `profiles`;
 CREATE TABLE profiles (
 	user_id BIGINT UNSIGNED NOT NULL UNIQUE,
 	firstname VARCHAR(50),
-	secondname VARCHAR(50),
+	lastname VARCHAR(50),
 	city VARCHAR(50),
 	country VARCHAR(50),
 	about_profile TINYTEXT,
@@ -162,7 +118,7 @@ CREATE TABLE users_groups (
 	group_id BIGINT UNSIGNED NOT NULL UNIQUE,
 	
 	FOREIGN KEY (student) REFERENCES users(id) ON DELETE CASCADE ON UPDATE CASCADE,
-	FOREIGN KEY (group_id) REFERENCES `group`(id) ON DELETE CASCADE ON UPDATE CASCADE
+	FOREIGN KEY (group_id) REFERENCES `groups`(id) ON DELETE CASCADE ON UPDATE CASCADE
 ) COMMENT 'обучающиеся в группах';
 
 
