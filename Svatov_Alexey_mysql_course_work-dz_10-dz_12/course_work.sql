@@ -155,7 +155,12 @@ CREATE TABLE marks (
 	FOREIGN KEY (task_id) REFERENCES tasks(id) ON DELETE CASCADE ON UPDATE CASCADE
 ) COMMENT 'оценки';
 	
-	
+
+ALTER TABLE `courses` ALTER COLUMN status SET DEFAULT 'open';
+ALTER TABLE `groups` CHANGE course_id course_id BIGINT UNSIGNED;
+ALTER TABLE `groups` DROP FOREIGN KEY groups_ibfk_1; 
+ALTER TABLE `groups` ADD CONSTRAINT `FK_groups_course_id` FOREIGN KEY (course_id) REFERENCES courses(id) ON DELETE SET NULL ON UPDATE CASCADE;
+ALTER TABLE `courses` ADD created_at DATETIME DEFAULT NOW() AFTER orientation, ADD updated_at DATETIME DEFAULT NOW() AFTER created_at; 
 	
 	
 
