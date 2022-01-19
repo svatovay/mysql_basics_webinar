@@ -558,7 +558,7 @@ INSERT INTO `courses` VALUES
 (13,'sapiente',13,4,'Saepe illo totam sequi natus qui vero natus. Ratione nesciunt nihil et similique commodi atque. Accusantium maiores repudiandae quo voluptatem.','Социально-гуманитарная','1984-02-27 23:49:41','2005-01-03 17:43:21','archive'),
 (14,'esse',14,7,'Id dolor similique consequatur minima. Molestias necessitatibus consequatur et sunt. Itaque explicabo laudantium beatae.','Художественная','1976-07-28 04:14:34','1984-05-02 22:20:54','close'),
 (15,'ipsa',15,8,'Veritatis ea dolorem dolor. Magnam est omnis corrupti tempore quia officia. Ipsa nobis quia laboriosam recusandae rerum illum ipsam. Quod quas tempore optio blanditiis eius.','Социально-гуманитарная','1979-03-22 21:19:16','1996-06-26 12:21:03','open'),
-(16,'cupiditate',17,6,'Sequi temporibus libero at. Rem dolorum delectus omnis est qui. Est fugit optio non velit. Architecto et vero non ut ducimus in.','Художественная','2005-12-28 11:14:09','1991-06-05 16:05:47','open'),
+(16,'cupiditate',15,6,'Sequi temporibus libero at. Rem dolorum delectus omnis est qui. Est fugit optio non velit. Architecto et vero non ut ducimus in.','Художественная','2005-12-28 11:14:09','1991-06-05 16:05:47','open'),
 (17,'ducimus',8,8,'Eos aut quis id. Dolorem vitae quo cumque voluptatem et impedit tempora. Minima adipisci et repellat animi voluptas cumque. Occaecati voluptatum sed aperiam ut vel suscipit.','Социально-гуманитарная','2013-09-12 13:25:04','2006-01-22 12:43:55','open'),
 (18,'quibusdam',9,4,'Dolores similique tempore est temporibus at. Rem et molestiae nisi sit. In ipsam modi dolorum eligendi consequatur ratione. Facilis et dolorem sint aliquid.','Художественная','1981-06-06 02:01:36','1996-12-07 01:10:24','open'),
 (19,'optio',10,4,'Dolorem quibusdam neque et architecto. Autem suscipit quia dolor. Molestiae praesentium est qui et id voluptatem ut. Consectetur tempore praesentium possimus et mollitia. Voluptatem voluptas harum esse reiciendis sit.','Социально-гуманитарная','1988-12-08 04:20:27','1973-08-11 13:21:13','archive'),
@@ -898,6 +898,9 @@ INSERT INTO `marks` VALUES
 (5,'Qui impedit cupiditate a modi debitis asperiores sit beatae.',68,8,68),
 (5,'Non saepe voluptatem voluptatibus porro autem.',69,9,69),
 (3,'Aut occaecati aliquam ad aut at praesentium corrupti.',70,7,70);
+-- add gender
+UPDATE profiles SET gender='g';
+UPDATE profiles SET gender='m' WHERE (user_id%3=0) OR (user_id%5=0);
 
 
 
