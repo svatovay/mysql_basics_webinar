@@ -265,6 +265,8 @@ INSERT INTO `users` VALUES
 (98,'nobis','76348c90ad5caa15bfca6ca256e433af31692d1f','crooks.geoffrey@example.net','1996-05-31 20:12:05'),
 (99,'esse','a01fb47a93344abe05d5ce3405a2f763901f5de5','janiya69@example.net','1977-10-09 03:28:43'),
 (100,'optio','a577c79871e662cd51db047237862ce517ef5b1b','verla.kub@example.net','1986-09-17 02:56:29');
+
+
 -- 2
 INSERT INTO `media_types` VALUES 
 (1,'voluptatibus','Delectus nihil voluptas enim officia. Quis placeat magni rerum error voluptatem architecto. Molestiae hic labore dicta quae et. Nemo vel repudiandae nostrum vel illum repudiandae.'),
@@ -287,6 +289,8 @@ INSERT INTO `media_types` VALUES
 (18,'earum','Dignissimos ullam reprehenderit quos et. Quis impedit sit sed. Sunt molestiae fugiat unde aut voluptates porro. Omnis eaque culpa accusamus animi iure doloremque similique.'),
 (19,'eos','Numquam blanditiis officiis ut quas. Molestias hic modi deleniti doloremque aut fuga dolorum. Qui repellendus numquam nisi eum.'),
 (20,'perspiciatis','Qui iure quaerat voluptates. Eveniet illum vel vitae sint eius. Est omnis ut repudiandae doloremque reprehenderit ex ipsam natus. Est quia distinctio deleniti.');
+
+
 -- 3
 INSERT INTO `media` VALUES 
 (1,'quos',1,1,'2017-09-10 10:38:27',81445),
@@ -439,6 +443,8 @@ INSERT INTO `media` VALUES
 (148,'nam',8,48,'1985-05-09 21:39:47',809),
 (149,'iusto',9,49,'2013-05-04 11:05:52',3),
 (150,'sunt',10,50,'1982-11-10 18:28:59',7);
+
+
 -- 4
 INSERT INTO `profiles` VALUES 
 (1,'Leanna','Littel','Bergstromchester','16901','Provident itaque quam cupiditate velit commodi nisi aut cupiditate. Amet ut sed illo omnis. Harum maxime dolore iste error magnam veritatis sequi. Velit repellendus et facere commodi error omnis non quisquam.',1,NULL,'1970-05-03'),
@@ -541,6 +547,8 @@ INSERT INTO `profiles` VALUES
 (98,'Jadyn','Greenfelder','West Rachael','4086078','Aliquam dolore ipsam et. Quo quia possimus et necessitatibus tempore laborum. Officia hic sit repudiandae quaerat optio dicta non voluptatum. Et rem iure sit nostrum eligendi omnis.',98,NULL,'2010-04-12'),
 (99,'Maybell','Littel','Schulistfurt','597803','Hic nemo nulla est quae. Ipsam ut voluptates dolores a. Cumque dicta rem et provident tenetur voluptatem excepturi aut. Repudiandae voluptatem iusto voluptatem enim.',99,NULL,'2004-02-28'),
 (100,'Thalia','Kunde','Rempelview','','Consectetur enim aut asperiores. Consequatur officiis eaque consequatur quas. Repellat aut quis vero. Quis quia vitae pariatur vel soluta.',100,NULL,'1985-03-31');
+
+
 -- 5
 INSERT INTO `courses` VALUES 
 (1,'dolores',1,2,'Sint quis amet enim a. Accusamus id sint vel quia quam vero. Doloremque minima doloremque dolorum aut et nemo ducimus. Ab voluptatem excepturi in et voluptas eos nihil.','Техническая','1974-04-11 05:23:48','1990-03-29 16:00:38','open'),
@@ -573,6 +581,8 @@ INSERT INTO `courses` VALUES
 (28,'illo',1,5,'Voluptatem quas qui dolores id quidem dolores voluptatem. Perferendis voluptatibus non voluptates omnis. Reprehenderit voluptates sed rerum consectetur. Quae et non odio nemo quis ratione.','Физкультурно-спортивная','1989-11-04 16:44:51','2005-11-24 01:20:45','open'),
 (29,'sequi',2,9,'Omnis numquam quam alias adipisci aut a. Suscipit aut porro ipsam architecto labore eius ut. Quaerat eum autem veritatis laudantium doloribus distinctio dignissimos quis. Nihil sit et excepturi voluptas atque in quia recusandae.','Туристско-краеведческая','2018-08-12 15:02:17','2015-12-24 17:11:01','open'),
 (30,'laudantium',3,5,'Officia molestiae cumque eos voluptatum cumque voluptatem dolor inventore. Sed ea quae minus inventore architecto sunt. Repudiandae dolore quibusdam qui harum reiciendis consequuntur ipsum.','Физкультурно-спортивная','1977-03-30 18:22:42','2014-12-18 00:41:50','open');
+
+
 -- 6
 INSERT INTO `media_courses` VALUES 
 (1,1),
@@ -635,6 +645,8 @@ INSERT INTO `media_courses` VALUES
 (58,28),
 (59,29),
 (60,30);
+
+
 -- 7
 INSERT INTO `groups` VALUES 
 (1,'consequatur',1,1,'2004-10-30 14:26:40'),
@@ -652,6 +664,8 @@ INSERT INTO `groups` VALUES
 (13,'enim',13,13,'1975-04-04 08:24:29'),
 (14,'recusandae',14,14,'2005-10-05 16:48:48'),
 (15,'nobis',15,15,'1999-03-29 21:29:51');
+
+
 -- 8
 INSERT INTO `users_groups` VALUES 
 (81,1),
@@ -734,6 +748,8 @@ INSERT INTO `users_groups` VALUES
 (78,3),
 (79,4),
 (80,5);
+
+
 -- 9
 INSERT INTO `tasks` VALUES 
 (1,'Impedit dicta quod r','Consequatur culpa sapiente et voluptatem ex quod quam. Ratione sed quos est in.',1,1,1),
@@ -826,6 +842,8 @@ INSERT INTO `tasks` VALUES
 (88,'Reiciendis provident','Voluptates quisquam consequatur veritatis mollitia officia aut. Tenetur neque inventore itaque error quo et. In nihil ut suscipit quis a qui.',28,8,88),
 (89,'Eum dolor laboriosam','Quam error facilis illum necessitatibus omnis cupiditate. Perspiciatis ducimus non totam ipsam et in. Labore sed natus aliquam consequatur error sit. Pariatur consequatur ea expedita sed itaque est minus.',29,9,89),
 (90,'Quis consequatur nat','Dolor ad rerum consequatur hic ea praesentium necessitatibus. Laboriosam fuga iste quaerat nesciunt incidunt ipsum. Nulla voluptatem ut maiores quo. Sed enim excepturi sunt accusantium non placeat. Vel nesciunt dolorem consequatur odio et minus quas.',30,9,90);
+
+
 -- 10
 INSERT INTO `marks` VALUES 
 (2,'Velit fuga nihil molestias velit corporis sed.',1,1,19),
@@ -898,9 +916,81 @@ INSERT INTO `marks` VALUES
 (5,'Qui impedit cupiditate a modi debitis asperiores sit beatae.',68,8,68),
 (5,'Non saepe voluptatem voluptatibus porro autem.',69,9,69),
 (3,'Aut occaecati aliquam ad aut at praesentium corrupti.',70,7,70);
--- add gender
-UPDATE profiles SET gender='g';
+
+
+UPDATE profiles SET gender='f';
 UPDATE profiles SET gender='m' WHERE (user_id%3=0) OR (user_id%5=0);
+INSERT INTO `users` VALUES (888,'TEST','00000000','berniece03@example.net','2018-04-12 13:37:54');
+
+-- хранимые процедуры/триггеры
+
+DELIMITER //
+CREATE TRIGGER tr_password_hash_insert BEFORE INSERT ON `pioner-online`.users
+    FOR EACH ROW 
+    BEGIN
+		SET NEW.password_hash = MD5(NEW.password_hash);	
+    END//​
+DELIMITER ;
+
+
+DELIMITER //
+CREATE TRIGGER tr_password_hash_update BEFORE UPDATE ON `pioner-online`.users
+    FOR EACH ROW 
+    BEGIN
+		SET NEW.password_hash = MD5(NEW.password_hash);	
+    END//​
+DELIMITER ;
+
+
+DROP PROCEDURE IF EXISTS CHECK_ACTUAL_COURSE;
+DELIMITER //
+CREATE PROCEDURE CHECK_ACTUAL_COURSE (key_date DATE)
+	BEGIN
+		DECLARE i INT;
+		DECLARE course_updated_at DATE;
+		SET i = (SELECT MAX(id) FROM courses);
+		WHILE i > 0 DO
+			SET course_updated_at = (SELECT updated_at FROM courses WHERE id = i);
+			IF (course_updated_at < key_date) THEN 
+				UPDATE courses SET status='archive' WHERE id=i;
+			END IF;
+			SET i = i-1;
+		END WHILE;
+	END//
+DELIMITER ;
+
+-- представления
+
+CREATE OR REPLACE VIEW `teachers` AS
+	SELECT firstname, lastname, courses.course_name 
+	FROM profiles JOIN courses 
+	ON profiles.user_id = courses.user_id 
+	ORDER BY firstname;
+
+
+CREATE OR REPLACE VIEW `top_10_students` AS
+	SELECT CONCAT(firstname,' ', lastname) AS student, 
+		   AVG(marks.mark) AS avg_mark 
+	FROM profiles JOIN marks 
+	ON profiles.user_id = marks.student 
+	GROUP BY student 
+	ORDER BY avg_mark DESC 
+	LIMIT 10;
+
+
+CREATE OR REPLACE VIEW `count_student_group` AS 
+	SELECT group_name,
+		   COUNT(group_id) AS count_student
+	FROM `groups` JOIN users_groups
+	ON `groups`.id = users_groups.group_id
+	GROUP BY group_name
+	ORDER BY group_name;
+
+		
+
+
+
+
 
 
 
