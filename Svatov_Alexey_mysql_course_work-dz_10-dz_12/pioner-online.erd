@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diagram version="1" name="pioner-online.erd">
+	<entities>
+		<data-source id="mysql8-17d7bd7d546-4881c72b04d56225">
+			<entity id="1" name="courses" fq-name="`pioner-online`.courses" order="0" x="908" y="694">
+				<path name="pioner-online"/>
+			</entity>
+			<entity id="2" name="groups" fq-name="`pioner-online`.`groups`" order="1" x="622" y="803">
+				<path name="pioner-online"/>
+			</entity>
+			<entity id="3" name="marks" fq-name="`pioner-online`.marks" order="2" x="20" y="517">
+				<path name="pioner-online"/>
+			</entity>
+			<entity id="4" name="media" fq-name="`pioner-online`.media" order="3" x="901" y="184">
+				<path name="pioner-online"/>
+			</entity>
+			<entity id="5" name="media_courses" fq-name="`pioner-online`.media_courses" order="4" x="1132" y="486">
+				<path name="pioner-online"/>
+			</entity>
+			<entity id="6" name="media_types" fq-name="`pioner-online`.media_types" order="5" x="1093" y="193">
+				<path name="pioner-online"/>
+			</entity>
+			<entity id="7" name="profiles" fq-name="`pioner-online`.profiles" order="6" x="899" y="411">
+				<path name="pioner-online"/>
+			</entity>
+			<entity id="8" name="tasks" fq-name="`pioner-online`.tasks" order="7" x="240" y="263">
+				<path name="pioner-online"/>
+			</entity>
+			<entity id="9" name="users" fq-name="`pioner-online`.users" order="8" x="377" y="531">
+				<path name="pioner-online"/>
+			</entity>
+			<entity id="10" name="users_groups" fq-name="`pioner-online`.users_groups" order="9" border-width="3" x="252" y="836">
+				<path name="pioner-online"/>
+			</entity>
+		</data-source>
+	</entities>
+	<relations>
+		<relation name="groups_ibfk_1" fq-name="`pioner-online`.`groups`.groups_ibfk_1" type="fk" pk-ref="1" fk-ref="2"/>
+		<relation name="media_courses_ibfk_2" fq-name="`pioner-online`.media_courses.media_courses_ibfk_2" type="fk" pk-ref="1" fk-ref="5"/>
+		<relation name="tasks_ibfk_1" fq-name="`pioner-online`.tasks.tasks_ibfk_1" type="fk" pk-ref="1" fk-ref="8"/>
+		<relation name="users_groups_ibfk_2" fq-name="`pioner-online`.users_groups.users_groups_ibfk_2" type="fk" pk-ref="2" fk-ref="10"/>
+		<relation name="media_courses_ibfk_1" fq-name="`pioner-online`.media_courses.media_courses_ibfk_1" type="fk" pk-ref="4" fk-ref="5"/>
+		<relation name="profiles_ibfk_2" fq-name="`pioner-online`.profiles.profiles_ibfk_2" type="fk" pk-ref="4" fk-ref="7"/>
+		<relation name="tasks_ibfk_3" fq-name="`pioner-online`.tasks.tasks_ibfk_3" type="fk" pk-ref="4" fk-ref="8"/>
+		<relation name="media_ibfk_1" fq-name="`pioner-online`.media.media_ibfk_1" type="fk" pk-ref="6" fk-ref="4"/>
+		<relation name="marks_ibfk_3" fq-name="`pioner-online`.marks.marks_ibfk_3" type="fk" pk-ref="8" fk-ref="3"/>
+		<relation name="courses_ibfk_1" fq-name="`pioner-online`.courses.courses_ibfk_1" type="fk" pk-ref="9" fk-ref="1"/>
+		<relation name="groups_ibfk_2" fq-name="`pioner-online`.`groups`.groups_ibfk_2" type="fk" pk-ref="9" fk-ref="2"/>
+		<relation name="marks_ibfk_1" fq-name="`pioner-online`.marks.marks_ibfk_1" type="fk" pk-ref="9" fk-ref="3">
+			<bend type="abs" x="177" y="591"/>
+			<bend type="abs" x="345" y="591"/>
+		</relation>
+		<relation name="marks_ibfk_2" fq-name="`pioner-online`.marks.marks_ibfk_2" type="fk" pk-ref="9" fk-ref="3">
+			<bend type="abs" x="198" y="646"/>
+			<bend type="abs" x="341" y="653"/>
+		</relation>
+		<relation name="media_ibfk_2" fq-name="`pioner-online`.media.media_ibfk_2" type="fk" pk-ref="9" fk-ref="4"/>
+		<relation name="profiles_ibfk_1" fq-name="`pioner-online`.profiles.profiles_ibfk_1" type="fk" pk-ref="9" fk-ref="7"/>
+		<relation name="tasks_ibfk_2" fq-name="`pioner-online`.tasks.tasks_ibfk_2" type="fk" pk-ref="9" fk-ref="8"/>
+		<relation name="users_groups_ibfk_1" fq-name="`pioner-online`.users_groups.users_groups_ibfk_1" type="fk" pk-ref="9" fk-ref="10"/>
+	</relations>
+</diagram>
