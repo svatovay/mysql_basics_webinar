@@ -959,10 +959,30 @@ CREATE PROCEDURE CHECK_ACTUAL_COURSE (key_date DATE)
 	END//
 DELIMITER ;
 
+-- функции
+
+DROP FUNCTION IF EXISTS `transfer`
+DELIMITER //
+CREATE FUNCTION `transfer` (student_id INT, new_group INT)
+RETURNS VARCHAR(50) DETERMINISTIC
+	BEGIN
+		DECLARE `result` VARCHAR(50);
+		IF (SELECT group_id FROM users_groups WHERE student = student_id) = new_group THEN
+		SET `result` = 'Студент уже в этой группе';
+		ELSE 
+		UPDATE users_groups SET group_id=new_group WHERE student=student_id;
+		SET `result` = CONCAT('Студент переведён в группу', ' ', new_group);
+		END IF;
+		RETURN (`result`);
+	END//
+DELIMITER ;
+
+SELECT transfer(81, 3);
+
 -- представления
 
 CREATE OR REPLACE VIEW `teachers` AS
-	SELECT firstname, lastname, courses.course_name 
+	SELECT profiles.user_id, firstname, lastname, courses.course_name 
 	FROM profiles JOIN courses 
 	ON profiles.user_id = courses.user_id 
 	ORDER BY firstname;
@@ -986,7 +1006,37 @@ CREATE OR REPLACE VIEW `count_student_group` AS
 	GROUP BY group_name
 	ORDER BY group_name;
 
-		
+-- скрипты характерных выборок
+
+-- подборка групп на открытых курсах
+SELECT g.group_name AS 'Название группы',
+	   c.course_name AS 'Название курса'
+FROM `groups` g JOIN courses c
+ON g.course_id = c.id
+WHERE c.status = 'open';
+
+-- количество проверенных ДЗ
+SELECT taskname AS 'Название задания',
+	   (SELECT COUNT(mark) FROM marks m WHERE m.task_id = tasks.id) AS 'Количество проверенных заданий'
+FROM tasks
+ORDER BY taskname;
+
+-- количество курсов у каждого педагога
+SELECT DISTINCT CONCAT(t.firstname,' ', t.lastname) AS teacher,
+	   (SELECT COUNT(c.user_id) FROM courses c WHERE c.user_id = t.user_id) AS 'Количество курсов'
+FROM teachers t
+ORDER BY teacher;
+
+-- задания по каждому курсу
+SELECT c.course_name,
+	   (SELECT DISTINCT CONCAT(t.firstname,' ', t.lastname) FROM teachers t WHERE t.user_id = c.user_id) AS teacher,
+		ts.taskname
+FROM courses c
+RIGHT JOIN tasks ts
+ON c.id = ts.course_id
+ORDER BY c.course_name;
+
+	   
 
 
 
