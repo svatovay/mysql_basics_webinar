@@ -40,6 +40,7 @@
 	gender - пол;
     	birthday - дата рождения;
     	Индексация по firstname&lastname;
+    Первичный ключ: user_id;
   	Внешние ключи: media_id на media(id), user_id на users(id).
   	
   	Таблица "courses" - "курсы" содержит следующие поля:
@@ -59,6 +60,7 @@
   	Таблица "media_courses" - "медиа, используемые на курсах" содержит следующие поля:
   	media_id - id медиа;
   	course_id - id курса;
+  	Первичный ключ: комплексный (media_id, course_id);
   	Внешние ключи: media_id на media(id), course_id на course(id).
   	
   	Таблица "groups" - "группы" содержит следующие поля:
@@ -73,6 +75,7 @@
   	Таблица "users_groups" - "пользователи, зачисленные в группы" содержит следующие поля:
   	student - id студента;
 	group_id id группы;
+	Первичный ключ: комплексный (student, group_id);
 	Внешние ключи: student на users(id), group_id на group(id).
   	
   	Таблица "tasks" - "задания" содержит следующие поля:
@@ -92,6 +95,7 @@
 	teacher - id преподавателя;
 	student - id студента;
 	Индексация по teacher, student;
+	Первичный ключ: комплексный (task_id, student);
 	Внешние ключи: task_id на task(id), teacher на users(id), student на users(id).
 
 Триггеры

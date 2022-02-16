@@ -161,3 +161,9 @@ ALTER TABLE `groups` CHANGE course_id course_id BIGINT UNSIGNED;
 ALTER TABLE `groups` DROP FOREIGN KEY groups_ibfk_1; 
 ALTER TABLE `groups` ADD CONSTRAINT `FK_groups_course_id` FOREIGN KEY (course_id) REFERENCES courses(id) ON DELETE SET NULL ON UPDATE CASCADE;
 ALTER TABLE `courses` ADD created_at DATETIME DEFAULT NOW() AFTER orientation, ADD updated_at DATETIME DEFAULT NOW() AFTER created_at; 
+
+-- добавление первичных ключей
+ALTER TABLE profiles ADD PRIMARY KEY (user_id);
+ALTER TABLE media_courses ADD PRIMARY KEY (media_id, course_id);
+ALTER TABLE users_groups ADD PRIMARY KEY (student, group_id);
+ALTER TABLE marks ADD PRIMARY KEY (task_id, student);
